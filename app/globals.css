@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e0e5ec;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: #e0e5ec;
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enhanced neomorphic shadows */
+.neo-raised {
+  box-shadow: 8px 8px 16px #b8bdc4, -8px -8px 16px #ffffff;
+}
+
+.neo-pressed {
+  box-shadow: inset 4px 4px 8px #b8bdc4, inset -4px -4px 8px #ffffff;
+}
+
+.neo-button {
+  box-shadow: 4px 4px 8px #b8bdc4, -4px -4px 8px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.neo-button:active {
+  box-shadow: inset 2px 2px 4px #b8bdc4, inset -2px -2px 4px #ffffff;
+}

@@ -1,7 +1,24 @@
 'use client';
 
+interface Service {
+  title: string;
+  icon: string;
+  description: string;
+  features: string[];
+  gradient: string;
+  glowColor: string;
+  badge?: string;
+}
+
+interface AdditionalService {
+  icon: string;
+  title: string;
+  desc: string;
+  gradient: string;
+}
+
 export default function Services() {
-  const services = [
+  const services: Service[] = [
     {
       title: 'Web Development',
       icon: 'M16 18 22 12 16 6 M8 6 2 12 8 18',
@@ -36,7 +53,7 @@ export default function Services() {
     }
   ];
 
-  const additionalServices = [
+  const additionalServices: AdditionalService[] = [
     { 
       icon: 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z', 
       title: 'E-Commerce', 
@@ -189,7 +206,12 @@ export default function Services() {
             <button 
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/contact';
+                }
               }}
               className="flex-shrink-0 px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold shadow-[0_8px_24px_rgba(251,191,36,0.4)] hover:shadow-[0_12px_32px_rgba(251,191,36,0.5)] hover:scale-105 transition-all duration-300 flex items-center gap-2 group"
             >
